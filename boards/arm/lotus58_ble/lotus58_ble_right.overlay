@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) 2024 Allister MacLeod
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "lotus58_ble.dtsi";
+
+&default_transform {
+  col-offset = <6>;
+};
+
+&right_encoder {
+  status = "okay";
+};
