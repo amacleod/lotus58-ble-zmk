@@ -17,6 +17,7 @@
     zephyr,sram = &sram0;
     zephyr,flash = &flash0;
     zmk,kscan = &kscan0;
+    zmk,physical-layout = &default_layout;
   };
 
   default_transform: keymap_transform_0 {
@@ -37,6 +38,12 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(4,0)  RC(4,11) RC(2,6) RC(2,7
 RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6)  RC(3,6) RC(3,7) RC(3,8)  RC(3,9) RC(3,10) RC(3,11)
                         RC(4,1) RC(4,2) RC(4,3) RC(4,4)  RC(4,7)  RC(4,8) RC(4,9) RC(4,10)
     >;
+  };
+
+  default_layout: physical_layout_0 {
+    compatible = "zmk,physical-layout";
+    display-name = "Default Layout";
+    transform = &default_transform;
   };
 
   kscan0: kscan0 {
