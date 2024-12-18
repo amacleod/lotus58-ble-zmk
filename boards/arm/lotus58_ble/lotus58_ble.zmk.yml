@@ -1,0 +1,16 @@
+---
+file_format: "1"
+id: lotus58_ble
+name: Lotus58 BLE
+url: https://github.com/TweetyDaBird/Lotus-58-BLE
+type: board
+arch: arm
+features:
+  - keys
+  - display
+outputs:
+  - usb
+  - ble
+siblings:
+  - lotus58_ble_left
+  - lotus58_ble_right
