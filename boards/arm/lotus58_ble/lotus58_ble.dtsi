@@ -92,6 +92,10 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6)  RC(3,6) RC(3,7
     sensors = <&left_encoder &right_encoder>;
     triggers-per-rotation = <20>;
   };
+
+  vbatt: vbatt {
+    compatible = "zmk,battery-nrf-vddh";
+  };
 };
 
 &adc {
@@ -110,6 +114,15 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6)  RC(3,6) RC(3,7
   status = "okay";
 };
 
+nice_view_spi: &spi1 {
+  status = "okay";
+  compatible = "nordic,nrf-spim";
+  pinctrl-0 = <&spi1_default>;
+  pinctrl-1 = <&spi1_sleep>;
+  pinctrl-names = "default", "sleep";
+  cs-gpios = <&gpio0 31 GPIO_ACTIVE_LOW>;
+};
+
 zephyr_udc0: &usbd {
   status = "okay";
 };
@@ -120,6 +133,10 @@ zephyr_udc0: &usbd {
   pinctrl-0 = <&uart0_default>;
   pinctrl-1 = <&uart0_sleep>;
   pinctrl-names = "default", "sleep";
+};
+
+&uicr {
+  nfct-pins-as-gpios;
 };
 
 &flash0 {
