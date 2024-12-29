@@ -19,6 +19,7 @@
     zephyr,flash = &flash0;
     zmk,kscan = &kscan0;
     zmk,physical-layout = &default_layout;
+    zmk,battery = &vbatt;
   };
 
   default_transform: keymap_transform_0 {
@@ -60,14 +61,14 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6)  RC(3,6) RC(3,7
     // Pin5: P0.24
     // Pin6: P0.13
 
-    interrupt-gpios = <&gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    interrupt-gpios = <&gpio0 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     gpios
-      = <&gpio0  2 GPIO_ACTIVE_HIGH>
-      , <&gpio0 28 GPIO_ACTIVE_HIGH>
-      , <&gpio0  3 GPIO_ACTIVE_HIGH>
-      , <&gpio0  9 GPIO_ACTIVE_HIGH>
-      , <&gpio0 10 GPIO_ACTIVE_HIGH>
-      , <&gpio0 24 GPIO_ACTIVE_HIGH>
+      = <&gpio0 28 GPIO_ACTIVE_LOW>
+      , <&gpio0  3 GPIO_ACTIVE_LOW>
+      , <&gpio0  9 GPIO_ACTIVE_LOW>
+      , <&gpio0 10 GPIO_ACTIVE_LOW>
+      , <&gpio0 24 GPIO_ACTIVE_LOW>
+      , <&gpio0  2 GPIO_ACTIVE_LOW>
       ;
   };
 

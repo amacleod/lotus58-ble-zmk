@@ -3,7 +3,7 @@
 if BOARD_LOTUS58_BLE_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Lotus58 BLE"
+    default "Lotus BLE"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
